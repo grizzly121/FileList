@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <APIControllerProtocol>
 
+@property (weak, nonatomic) IBOutlet UITableView *appTableView;
+@property (nonatomic,strong) NSArray *Movies;
+@property (nonatomic,strong) APIController *api;
 
 @end
 
