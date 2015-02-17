@@ -15,12 +15,13 @@
     
     NSURL *url = [[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *Request = [NSURLRequest requestWithURL:url
-                             cachePolicy:NSURLRequestReloadIgnoringCacheData
+                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                          timeoutInterval:60.0];
     
-    [NSURLConnection sendAsynchronousRequest:Request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection sendAsynchronousRequest:Request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
       
-        if(connectionError != nil){
             NSError *error = nil;
             NSDictionary *jsonResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers
                                                                       error:&error ];
@@ -36,10 +37,7 @@
                     [self.APIControllerProtocol JSONAPIResults:results];
                 }
             }
-        }else{
-        
-            NSLog(@"%@",[connectionError localizedDescription]);
-        }
+
         
     }];
 }
