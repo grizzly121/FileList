@@ -418,6 +418,7 @@
 				09CB91811A8CCB9100579D06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09CB91821A8CCB9100579D06 /* Build configuration list for PBXNativeTarget "FileListTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				09CB91841A8CCB9100579D06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "APIController.h"
+#include "APIController.h"
 
-@interface ViewController : UIViewController <APIControllerProtocol>
+@interface ViewController : UIViewController<APIControllerProtocol,UISearchBarDelegate,UISearchControllerDelegate>
 
+
+@property (nonatomic,strong) APIController *api;
 @property (weak, nonatomic) IBOutlet UITableView *appTableView;
 @property (nonatomic,strong) NSArray *Movies;
-@property (nonatomic,strong) APIController *api;
+@property (nonatomic,strong) NSMutableArray *filteredMovies;
+@property (strong) IBOutlet UISearchBar *MoviesSearchBar;
+@property (strong) IBOutlet UISegmentedControl *MoviesSegmentControl;
+@property (strong,nonatomic) NSString *APIKey;
 
 @end
 
