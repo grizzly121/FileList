@@ -11,7 +11,7 @@
 @implementation APIController
 
 
--(void)GetAPIAsyncResults:(NSString *) urlString{
+-(void)GetAPIAsyncResultsListFilms:(NSString *)urlString{
     
     NSURL *url = [[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *Request = [NSURLRequest requestWithURL:url
@@ -40,6 +40,17 @@
 
         
     }];
+}
+
+-(NSDictionary *)GetResultsAboutFilmsById:(NSString *)urlString{
+
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    NSError *error;
+    NSURLResponse *resp;
+    NSData* MovieData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&error];
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:MovieData options:NSJSONReadingMutableContainers
+                                                             error:&error ];
+    return result;
 }
 
 @end

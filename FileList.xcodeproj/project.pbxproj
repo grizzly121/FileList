@@ -15,6 +15,7 @@
 		09CB91701A8CCB9100579D06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CB916E1A8CCB9100579D06 /* LaunchScreen.xib */; };
 		09CB917C1A8CCB9100579D06 /* FileListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CB917B1A8CCB9100579D06 /* FileListTests.m */; };
 		09CB91871A8CFDA300579D06 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CB91861A8CFDA300579D06 /* APIController.m */; };
+		09D786281A964DAA003E8C45 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D786271A964DAA003E8C45 /* MovieDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		09CB917B1A8CCB9100579D06 /* FileListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileListTests.m; sourceTree = "<group>"; };
 		09CB91851A8CFDA300579D06 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		09CB91861A8CFDA300579D06 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
+		09D786261A964DAA003E8C45 /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
+		09D786271A964DAA003E8C45 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 			children = (
 				09CB91631A8CCB9100579D06 /* AppDelegate.h */,
 				09CB91641A8CCB9100579D06 /* AppDelegate.m */,
+				09D786261A964DAA003E8C45 /* MovieDetailsViewController.h */,
+				09D786271A964DAA003E8C45 /* MovieDetailsViewController.m */,
 				09CB91661A8CCB9100579D06 /* ViewController.h */,
 				09CB91671A8CCB9100579D06 /* ViewController.m */,
 				09CB91691A8CCB9100579D06 /* Main.storyboard */,
@@ -227,6 +232,7 @@
 				09CB91871A8CFDA300579D06 /* APIController.m in Sources */,
 				09CB91681A8CCB9100579D06 /* ViewController.m in Sources */,
 				09CB91651A8CCB9100579D06 /* AppDelegate.m in Sources */,
+				09D786281A964DAA003E8C45 /* MovieDetailsViewController.m in Sources */,
 				09CB91621A8CCB9100579D06 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

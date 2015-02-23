@@ -12,6 +12,7 @@
 @protocol APIControllerProtocol <NSObject>
 
 -(void) JSONAPIResults: (NSArray *) results;
+-(void) JSONAPIResult: (NSDictionary *) result;
 
 @end
 
@@ -19,6 +20,7 @@
 @interface APIController : NSObject
 
 @property (weak) id<APIControllerProtocol> APIControllerProtocol;
--(void)GetAPIAsyncResults:(NSString *) urlString;
+-(void)GetAPIAsyncResultsListFilms:(NSString *) urlString;
+-(NSDictionary *)GetResultsAboutFilmsById:(NSString *)urlString;
 
 @end
