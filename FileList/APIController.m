@@ -14,10 +14,11 @@
 -(void)GetAPIAsyncResultsListFilms:(NSString *)urlString{
     
     NSURL *url = [[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSURLRequest *Request = [NSURLRequest requestWithURL:url
+    NSMutableURLRequest *Request = [NSMutableURLRequest requestWithURL:url
                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                          timeoutInterval:60.0];
     
+    [Request setHTTPMethod:@"Get"];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
     [NSURLConnection sendAsynchronousRequest:Request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -44,7 +45,9 @@
 
 -(NSDictionary *)GetResultsAboutFilmsById:(NSString *)urlString{
 
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]
+                                    cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:60.0];
+    [request setHTTPMethod:@"Get"];
     NSError *error;
     NSURLResponse *resp;
     NSData* MovieData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&error];
