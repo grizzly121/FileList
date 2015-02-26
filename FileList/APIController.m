@@ -48,9 +48,14 @@
     NSError *error;
     NSURLResponse *resp;
     NSData* MovieData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&error];
-    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:MovieData options:NSJSONReadingMutableContainers
+    if (error) {
+        NSLog(@"Data is empty");
+        return nil;
+    }else{
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:MovieData options:NSJSONReadingMutableContainers
                                                              error:&error ];
-    return result;
+        return result;
+    }
 }
 
 @end
